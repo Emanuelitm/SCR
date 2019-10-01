@@ -1,0 +1,16 @@
+*CODIGO PARA PINTAR CELDAS DEPENDIANDO UN VALOR
+https://www.lawebdelprogramador.com/foros/PHP/1556292-colorear-celda-de-tabla-segun-valor-obtenido.html
+
+<?php foreach($model->Listar() as $r): ?>
+	<tr>
+		<td nowrap><?php echo $r->__GET('TIPO'); ?></td>
+		<td nowrap><?php echo $r->__GET('IMEI'); ?></td>
+		<?php $marc =  $r->__GET('MARCA'); // evaluo
+		switch ($marc){
+			case 'BMW' : $color = 'green'; break;// colo verde para BMW
+			case 'SMM' : $color = 'yellow'; break; // color amarillo y asi .....
+		}
+		?>
+		<td style="background-color:<?php echo $color ?>;" nowrap><?php echo $r->__GET('MARCA');?></td> //llamo al color en el atributo style
+		<td nowrap><?php echo $r->__GET('MODELO'); ?></td>
+		<td nowrap><?php echo $r->__GET('MC'); ?></td>

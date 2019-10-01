@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SCR</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="script" href="usuario.js">
+    <!-- GOOGLE FONTs -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+<body>
+    
+    <div class="content">
+        <nav class="menu">
+          <ul>
+            <li style="float:left"><img src="images/SCR(2).png"></li>
+            <li><a href="#" class="active">Disponibilidad</a></li>
+            <li><a href="#">Inicio</a></li>
+            
+          </ul>
+        </nav>
+        <script type="text/javascript">
+            var WinNetwork = new ActiveXObject("WScript.Network");
+            alert(WinNetwork.UserName); 
+        </script>
+        
+        <div class="contact-wrapper animated bounceInUp">
+            <div class="contact-form">
+                <h3>Solicitud</h3>
+                <form action="save_task.php">
+                    <p>
+                        <label>Nombre de solicitante</label>
+                        <input type="text" name="nombre" id="usuario">
+                    </p>
+                    <p>
+                        <label>Area</label>
+                        <select name="area" id="area">
+                            <option selected="selected">Embarques</option>
+                            <option>Import/Export</option>
+                            <option>Materiales</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <!--Esta etiqueta solo es para darle espacio a la hora-->
+                    </p>
+
+                    </p>
+                    <p>
+                        <label>Del dia y hora:</label>
+                        <input id="del" type="datetime-local" name="fechahoradel" step="1" min="2018-01-01T00:00" max="2022-12-31T12:00" value="2018-01-01T12:00">
+
+                    <p>
+                        <label>Hasta el dia y hora:</label>
+                        <input id="hasta" type="datetime-local" name="fechahorahasta" step="1" min="2018-01-01T00:00" max="2022-12-31T12:00" value="2018-01-01T12:00">
+                    </p>
+
+                    <p class="block">
+                       <label>Comentarios:</label> 
+                        <textarea id="comentarios" name="comentarios" rows="3"></textarea>
+                    </p>
+                    <p class="block">
+                        <button type="submit" name="save_solicitud">
+                            Solicitar
+                        </button>
+                    </p>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h4></h4>
+                <ul>
+                    <div style="text-align:center;padding:1em 0;"> <h2><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/es/city/3530597"><span style="color:gray;">Hora actual en</span><br />Mexico City, México</a></h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=large&timezone=America%2FMexico_City" width="100%" height="140" frameborder="0" seamless></iframe> </div>
+                </ul>
+                <p class>Sistema de Control de Rampa</p>
+                <h4>En este sistema puede solicitar dia y hora en especifico para cargar y/o descargar material o equipo que necesite. Tambien puede verificar disponibilidad para planear con tiempo.</h4>
+                <p></p>
+                <div align="center" class="sensata">
+                <img src="images/Sensata.png">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
