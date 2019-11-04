@@ -4,18 +4,31 @@ include('db.php');
 
 if (isset($_POST['save_solicitud'])) {
 
-  $sql = "SELECT fechahoradel, fechahorahasta FROM solicitud";
-  $resultado = mysqli_query($con, $sql);
-  $del = $fechahoradel;
-  $hasta = $fechahorahasta;
-  $dbdel = $row['fechahoradel'];
-  $dbhasta = $row['fechahorahasta'];
+  $sql = "SELECT id, fechahoradel, fechahorahasta FROM solicitud";
+  $resultado = mysqli_query($conn, $sql);
 
-  if (($del >= $dbdel && $hasta <= $dbhasta) || ($del <= $dbdel && $hasta >= $dbhasta) || ()) { 
+  $array = mysql_rows($resultado);
 
+  if($array>0) {
+    for($i=0;$i<=$array;$i++){
 
-    
-  } else {
+    }
+  }
+
+  $del = new datatime ($fechahoradel);
+  $hasta = new datatime ($fechahorahasta);
+  $dbdel = new datatime ($row['fechahoradel']);
+  $dbhasta = new datetime ($row['fechahorahasta']);
+  //for () {
+
+  //}
+
+  if (($del >= $dbdel && $hasta <= $dbhasta) || ($del <= $dbdel && $hasta >= $dbhasta) || ($del <= $dbdel && $hasta <= $dbhasta) || ($del >= $dbdel && $hasta >= $dbhasta)) { 
+    $_SESSION['message'] = 'No se puede reservar esta fecha.';
+    $_SESSION['message_type'] = 'success';
+  }
+
+  else {
     $nombre = $_POST['nombre'];
     $area = $_POST['area'];
     $rampa = $_POST['rampa'];
