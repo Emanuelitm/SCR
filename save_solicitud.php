@@ -11,7 +11,7 @@ if (isset($_POST['save_solicitud'])) {
 
   if($array>0) {
     for($i=0;$i<=$array;$i++){
-
+      
     }
   }
 
