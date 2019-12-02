@@ -5,7 +5,7 @@
 
 <div class="contact-wrapper animated bounceInUp">
     <div class="contact-form">
-        <h2 text-color="green">DISPONIBILIDAD</h2>
+        <h2 text-color="red">DISPONIBILIDAD</h2>
         <table class="" border="5" bordercolor="white" cellspacing="0">
             <thead>
                 <tr>
@@ -21,10 +21,10 @@
             <tbody>
 
                 <?php
-                $query = "SELECT * FROM solicitud";
+                $query = "SELECT * FROM solicitud WHERE fechahoradel BETWEEN NOW() AND NOW() + INTERVAL 7 DAY";
                 $result_solicitud = mysqli_query($conn, $query);
 
-                while ($row = mysqli_fetch_assoc($result_solicitud)) { ?>
+                while ($row = mysqli_fetch_array($result_solicitud)) { ?>
                     <tr>
                         <td><?php echo $row['id_solicitud']; ?></td>
                         <td><?php echo $row['nombre']; ?></td>

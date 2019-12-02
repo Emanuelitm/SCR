@@ -4,16 +4,10 @@ include('db.php');
 
 if (isset($_POST['save_solicitud'])) {
 
-  $sql = "SELECT id, fechahoradel, fechahorahasta FROM solicitud";
+  $sql = "SELECT * FROM solicitud WHERE fechahoradel BETWEEN NOW() AND NOW() + INTERVAL 7 DAY";
   $resultado = mysqli_query($conn, $sql);
 
-  $array = mysql_rows($resultado);
-
-  if($array>0) {
-    for($i=0;$i<=$array;$i++){
-      
-    }
-  }
+  //$array = mysql_fetch_array($resultado);
 
   $del = new datatime ($fechahoradel);
   $hasta = new datatime ($fechahorahasta);
