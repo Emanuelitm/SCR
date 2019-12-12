@@ -28,14 +28,14 @@
                 <select name="area" id="area">
                     <option selected="selected">Embarques</option>
                     <option>Import/Export</option>
-                    <option>Materiales</option>
-                    <option>Otro</option>
+                    <option>Compras</option>
+                    <option>Otro (Especifique en comentario)</option>
                 </select>
 
                 <label>Rampa:</label>
                 <select name="rampa" id="rampa">
-                    <option selected="selected">Rampa #1</option>
-                    <option>Rampa #2</option>
+                    <option selected="selected">1</option>
+                    <option>2</option>
                 </select>
             </p>
 

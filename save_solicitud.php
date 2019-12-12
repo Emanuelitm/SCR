@@ -4,25 +4,23 @@ include('db.php');
 
 if (isset($_POST['save_solicitud'])) {
 
-  $sql = "SELECT * FROM solicitud WHERE fechahoradel BETWEEN NOW() AND NOW() + INTERVAL 7 DAY";
-  $resultado = mysqli_query($conn, $sql);
+  //$sql = "SELECT id, fechahoradel, fechahorahasta FROM solicitud";
+  //$resultado = mysqli_query($conn, $sql);
 
-  //$array = mysql_fetch_array($resultado);
+  //$comp = mysqli_fetch_array($resultado);
 
-  $del = new datatime ($fechahoradel);
-  $hasta = new datatime ($fechahorahasta);
-  $dbdel = new datatime ($row['fechahoradel']);
-  $dbhasta = new datetime ($row['fechahorahasta']);
-  //for () {
+  //$del = new datetime ($fechahoradel);
+  //$hasta = new datetime ($fechahorahasta);
+  //$dbdel = new datetime ($row['fechahoradel']);
+  //$dbhasta = new datetime ($row['fechahorahasta']);
 
+
+  //if (($del >= $dbdel && $hasta <= $dbhasta) || ($del <= $dbdel && $hasta >= $dbhasta) || ($del <= $dbdel && $hasta <= $dbhasta) || ($del >= $dbdel && $hasta >= $dbhasta)) { 
+   // $_SESSION['message'] = 'No se puede reservar esta fecha.';
+   // $_SESSION['message_type'] = 'success';
   //}
 
-  if (($del >= $dbdel && $hasta <= $dbhasta) || ($del <= $dbdel && $hasta >= $dbhasta) || ($del <= $dbdel && $hasta <= $dbhasta) || ($del >= $dbdel && $hasta >= $dbhasta)) { 
-    $_SESSION['message'] = 'No se puede reservar esta fecha.';
-    $_SESSION['message_type'] = 'success';
-  }
-
-  else {
+ // else {
     $nombre = $_POST['nombre'];
     $area = $_POST['area'];
     $rampa = $_POST['rampa'];
@@ -33,7 +31,7 @@ if (isset($_POST['save_solicitud'])) {
     $result = mysqli_query($conn, $query);
     if (!$result) {
       die("Query Failed.");
-    }
+    //}
     $_SESSION['message'] = 'FECHA Y HORA RECERVADA CORRECTAMENTE';
     $_SESSION['message_type'] = 'success';
   }
