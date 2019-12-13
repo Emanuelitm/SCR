@@ -6,6 +6,14 @@
 <div class="contact-wrapper animated bounceInUp">
     <div class="contact-form">
         <h2 text-color="red">DISPONIBILIDAD</h2>
+
+
+        <form method="post" action="pagina-resultados.php">
+        <input type="text" name="texto_busqueda">
+        <input type="submit" name="enviar" value="buscar">
+        </form>
+
+
         <table class="" border="5" bordercolor="white" cellspacing="0">
             <thead>
                 <tr>
@@ -40,7 +48,7 @@
                 <i class="fas fa-edit"></i>
             </a>
             <a href="drop.php?id=<?php echo $row['id_solicitud'] ?>" class="btn btn-danger" name="borrador">
-                <i class="far fa-trash-alt"></i>
+                <i class="far fa-trash-alt"></i>    
             </a>
             </td>
             
