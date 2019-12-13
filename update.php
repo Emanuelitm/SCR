@@ -29,10 +29,12 @@ if (isset($_POST['Update_solicitud'])) {
     $fechahoradel = $_POST['fechahoradel'];
     $fechahorahasta = $_POST['fechahorahasta'];
     $comentarios = $_POST['comentarios'];
-    $query = "UPDATE solicitud SET id_solicitud='".$id."', nombre='".$nombre."', area='".$area."', rampa='".$rampa."', fechahoradel='".$fechahoradel."', fechahorahasta='".$fechahorahasta."', comentarios='".$comentarios."', data_created=time() WHERE id=".$id;
-    $result = mysqli_query($conn, $query);
-    var_dump($result, $query, time());
-    if (!$result) {
+    $query = "UPDATE solicitud SET nombre= '".$nombre."', area='".$area."', rampa='".$rampa."', fechahoradel='". $fechahoradel."', fechahorahasta='".$fechahorahasta."', comentarios='".$comentarios."', data_created='".date("Y-m-d H:i:s")."' WHERE id_solicitud='".$id."'";
+    //$result = mysqli_query($conn, $query);
+    var_dump($query, time());
+    if (mysqli_query($conn, $query)) {
+        echo "Hecho";
+    } else {
       die("Query Failed.");
       $_SESSION['message'] = 'No se puede reservar esta fecha.';
       $_SESSION['message_type'] = 'success';

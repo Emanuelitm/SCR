@@ -39,7 +39,7 @@
             <a href="editar.php?id=<?php echo $row['id_solicitud']; ?>" class="btn btn-secondary">
                 <i class="fas fa-edit"></i>
             </a>
-            <a href="delete_task.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">
+            <a href="drop.php?id=<?php echo $row['id_solicitud'] ?>" class="btn btn-danger" name="borrador">
                 <i class="far fa-trash-alt"></i>
             </a>
             </td>
