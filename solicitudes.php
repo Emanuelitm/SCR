@@ -21,7 +21,8 @@
             <tbody>
 
                 <?php
-                $query = "SELECT * FROM solicitud WHERE fechahoradel BETWEEN NOW() AND NOW() + INTERVAL 7 DAY";
+                //$query = "SELECT * FROM solicitud WHERE fechahoradel BETWEEN NOW() AND NOW() + INTERVAL 7 DAY";
+                $query = "SELECT * FROM solicitud";
                 $result_solicitud = mysqli_query($conn, $query);
 
                 while ($row = mysqli_fetch_array($result_solicitud)) { ?>
@@ -33,16 +34,16 @@
                         <td><?php echo $row['fechahorahasta']; ?></td>
                         <td><?php echo $row['comentarios']; ?></td>
                         <td><?php echo $row['data_created']; ?></td>
-                        <!-----------BOTONES PARA EDITAR Y ELIMINAR (SOLO PARA ADMIN.)----------
+                        <!-----------BOTONES PARA EDITAR Y ELIMINAR (SOLO PARA ADMIN.)---------->
             <td>
-            <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
+            <a href="editar.php?id=<?php echo $row['id_solicitud']; ?>" class="btn btn-secondary">
                 <i class="fas fa-edit"></i>
             </a>
             <a href="delete_task.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">
                 <i class="far fa-trash-alt"></i>
             </a>
             </td>
-            ---------BOTONES PARA EDITAR Y ELIMINAR (SOLO PARA ADMIN.)---------->
+            
                     </tr>
                 <?php } ?>
             </tbody>

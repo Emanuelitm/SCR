@@ -6,6 +6,6 @@ $conn = mysqli_connect(
   'root',
   '',
   'scr'
-) or die(mysqli_erro($mysqli));
+) or die(mysqli_error($mysqli));
 
 ?>
