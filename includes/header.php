@@ -21,6 +21,15 @@
         <nav class="menu">
           <ul>
             <li style="float:left"><img src="images/SCR(2).png"></li>
+
+
+
+            <form method="POST" action="pagina-resultados.php"> 
+            <input type="text" name="palabra" size="20">
+            <input type="submit" value="Buscar" name="buscar"> 
+            </form> 
+
+
             <li><a href="./disponibilidad.php" class="active">Disponibilidad</a></li>
             <li><a href="./solicitudes.php">Solicitudes</a></li>
             <li><a href="./index.php">Inicio</a></li>

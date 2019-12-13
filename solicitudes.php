@@ -20,6 +20,7 @@
                     <th>No. DE SOLICITUD</th>
                     <th>NOMBRE DE SOLICITANTE</th>
                     <th>AREA</th>
+                    <th>RAMPA</th>
                     <th>DESDE</th>
                     <th>HASTA</th>
                     <th>COMENTARIOS</th>
@@ -38,6 +39,7 @@
                         <td><?php echo $row['id_solicitud']; ?></td>
                         <td><?php echo $row['nombre']; ?></td>
                         <td><?php echo $row['area']; ?></td>
+                        <td><?php echo $row['rampa']; ?></td>
                         <td><?php echo $row['fechahoradel']; ?></td>
                         <td><?php echo $row['fechahorahasta']; ?></td>
                         <td><?php echo $row['comentarios']; ?></td>
