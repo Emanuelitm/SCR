@@ -12,7 +12,7 @@
  	// $id = $_GET['id'];
         $query =  "SELECT * FROM solicitud";
         $result_solicitud = mysqli_query($conn, $query);
-        $row = mysqli_fetch_array($result_solicitud);
+        // $row = mysqli_fetch_array($result_solicitud);
         // print_r($row);
 
 	/* Función */
@@ -29,16 +29,17 @@
 		}
 
 		while ($row = mysqli_fetch_array($result_solicitud)) {
-			# code...
+
 			$fecha_inicio = $row['fechahoradel']; 
 			$fecha_fin = $row['fechahorahasta'];
+			//Aqui va el valor del selector de fecha 
 			$fecha = '2017-08-22';
-
+			//IMPRIMES LO QUE DESEES VER CON EL FORMATO QUE GUSTES
 			if (check_in_range($fecha_inicio, $fecha_fin, $fecha))
 			{
-			    echo "solicitud ".$row['id_solicitud']."fecha está en el rango\n";
+			    echo "solicitud ".$row['id_solicitud']."fecha está en el rango \r\n";
 			}else{
-			    echo "solicitud ".$row['id_solicitud']." NO está en el rango\n";
+			    echo "solicitud ".$row['id_solicitud']." NO está en el rango \r\n";
 
 			}
 		}
