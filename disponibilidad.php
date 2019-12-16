@@ -9,54 +9,56 @@
 
     <?php
 
- $id = $_GET['id'];
-        $query = "SELECT * FROM solicitud";
-        
-
+ 	// $id = $_GET['id'];
+        $query =  "SELECT * FROM solicitud";
         $result_solicitud = mysqli_query($conn, $query);
-        $row = mysqli_fetch_object($result_solicitud);
-/* Función */
-function check_in_range($fecha_inicio, $fecha_fin, $fecha){
+        $row = mysqli_fetch_array($result_solicitud);
+        // print_r($row);
 
-     $fecha_inicio = strtotime($fecha_inicio);
-     $fecha_fin = strtotime($fecha_fin);
-     $fecha = strtotime($fecha);
+	/* Función */
+		function check_in_range($fecha_inicio, $fecha_fin, $fecha){
 
-     if(($fecha >= $fecha_inicio) && ($fecha <= $fecha_fin))
-         return true;
-     else
-         return false;
- }
+			$fecha_inicio = strtotime($fecha_inicio);
+			$fecha_fin = strtotime($fecha_fin);
+			$fecha = strtotime($fecha);
+
+			if(($fecha >= $fecha_inicio) && ($fecha <= $fecha_fin))
+				return true;
+			else
+				return false;
+		}
+
+		while ($row = mysqli_fetch_array($result_solicitud)) {
+			# code...
+			$fecha_inicio = $row['fechahoradel']; 
+			$fecha_fin = $row['fechahorahasta'];
+			$fecha = '2017-08-22';
+
+			if (check_in_range($fecha_inicio, $fecha_fin, $fecha))
+			{
+			    echo "solicitud ".$row['id_solicitud']."fecha está en el rango\n";
+			}else{
+			    echo "solicitud ".$row['id_solicitud']." NO está en el rango\n";
+
+			}
+		}
+		/*Código de prueba*/
 
 
-/*Código de prueba*/
 
-$fecha_inicio = $_GET['fechahoradel']; 
-$fecha_fin = $_GET['fechahorahasta'];
-$fecha = '2017-08-22';
+		// $fecha_inicio = '2017-08-15'; 
+		// $fecha_fin = '2017-08-31';
+		// $fecha = '2018-08-22';
 
-if (check_in_range($fecha_inicio, $fecha_fin, $fecha))
-{
-    echo "$fecha está en el rango\n";
-}else{
-    echo "$fecha NO está en el rango\n";
+		// if (check_in_range($fecha_inicio, $fecha_fin, $fecha))
+		// {
+		//     echo "$fecha está en el rango\n";
+		// }else{
+		//     echo "$fecha NO está en el rango\n";
 
-}
+		// }
 
-
-$fecha_inicio = '2017-08-15'; 
-$fecha_fin = '2017-08-31';
-$fecha = '2018-08-22';
-
-if (check_in_range($fecha_inicio, $fecha_fin, $fecha))
-{
-    echo "$fecha está en el rango\n";
-}else{
-    echo "$fecha NO está en el rango\n";
-
-}
-
-?>
+	?>
 
 
 
